@@ -247,6 +247,10 @@ body{
   height:55vh;
 }
 
+.reason .row .image img:hover{
+  transform: scale(1.03);
+}
+
 .reason .row .content{
   text-align: left;
   padding:0 3rem;
@@ -340,6 +344,7 @@ body{
   text-align: center;
   height: 30rem;
   border: 1px solid #333;
+  overflow: auto;
 }
 
 
@@ -402,7 +407,7 @@ body{
 .team .mySwiper .card{
   height:35rem;
   width:25rem;
-  background:#fff;
+  background:linear-gradient(rgb(119, 223, 255), rgb(196, 253, 255));
   text-align: center;
   margin:7rem 2rem;
   position: relative;
@@ -435,14 +440,17 @@ body{
 }
 
 .team .mySwiper .card .info .icons a{
-  margin-top: 4rem;
-  padding:0 1rem;
+  margin-top: 5rem;
+  padding:1rem 1rem;
   font-size: 2rem;
   color:#333;
 }
 
+
 .team .mySwiper .card .info .icons a:hover{
-  color:var(--color);
+  background-color: var(--color);
+  color:#fff;
+  border-radius: 10px;
 }
 
 
@@ -560,6 +568,11 @@ body{
   .reason .row .content{
     padding:0;
   }
+
+  .solution .box-container{
+    flex-wrap: wrap;
+  }
+
   .container{
     padding:20px;
   }
