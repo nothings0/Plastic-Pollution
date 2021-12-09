@@ -78,11 +78,18 @@ body{
 .header .logo i{
   padding: .5rem;
   margin-right: 1rem;
+  animation: myAni 1.5s infinite linear;
 }
 
-.header .logo i:hover{
-  transform: rotate(180deg);
+@keyframes myAni {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
+
 
 .header .navbar ul{
   list-style-type: none;
@@ -370,26 +377,6 @@ body{
 
 .solution .box-container .box:hover{
   transform: scale(1.03);
-}
-
-.video{
-  background: #444;
-  overflow: hidden;
-}
-
-.video .heading{
-  color: #fff;
-  display: block;
-  text-align: center;
-}
-
-
-.video .box{
-  left: 0;right: 0;
-  display: flex;
-  background: #444;
-  padding-bottom: 5rem;
-  align-items: center;
 }
 
 
