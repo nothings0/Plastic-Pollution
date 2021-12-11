@@ -20,6 +20,7 @@ html{
 
 body{
   overflow-x: hidden;
+  width: 100%;
 }
 
 .heading{
@@ -78,7 +79,7 @@ body{
 .header .logo i{
   padding: .5rem;
   margin-right: 1rem;
-  animation: myAni 1.5s infinite linear;
+  animation: myAni 2s infinite linear;
 }
 
 @keyframes myAni {
@@ -218,12 +219,17 @@ body{
 }
 
 .about .row .image img{
-  width: 50vw;
+  width: 49vw;
+}
+
+.about .row .image img:hover{
+  transform: scale(1.02);
 }
 
 .about .row .content h3{
   font-size: 3rem;
   color: var(--color);
+  text-align: center;
 }
 
 .about .row .content p{
@@ -294,10 +300,11 @@ body{
 }
 
 .container .box-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap:1.5rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .container .box-container .box{
@@ -305,6 +312,8 @@ body{
   border-radius: 5px;
   background: #fff;
   padding:1rem 1.5rem;
+  width: 49%;
+  height: 45rem;
 }
 
 .container .box-container .box img{
@@ -341,15 +350,14 @@ body{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .solution .box-container .box{
-  flex: 1 1 30%;
+  width: 32%;
+  padding: 1rem;
   border-radius: .5rem;
-  padding:1rem;
-  margin: 1rem;
   text-align: center;
-  height: 30rem;
   border: 1px solid #333;
   overflow: auto;
 }
@@ -369,7 +377,7 @@ body{
 }
 
 .solution .box-container .box p{
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color:#666;
   padding-top:2.5rem;
   text-align: left;
@@ -461,15 +469,75 @@ body{
   font-size: 1.8rem;
   padding:0 1rem;
 }
-
-
+ 
 
 
 
 
 /* media queries  */
 
-@media (max-width:768px){
+
+/* Tabblet */
+@media (max-width:1024px){
+  html{
+    font-size: 55%;
+  }
+  .header .navbar ul li{
+    margin:0 1rem;
+  }
+  .header .navbar ul li a{
+    font-size: 1.8rem;
+  }
+  .home{
+    min-height: 60vh;
+  }
+  .about{
+    min-height: 56vh;
+  }
+  .about .row{
+    flex-direction: column-reverse;
+  }
+  .about .row .image img{
+    width: 69vh;
+    margin-bottom: 5rem;
+  }
+  .about .row .content{
+    margin-bottom: 5rem;
+  }
+
+  .reason .row {
+    margin: -1rem 0;
+    padding: 3rem 1rem;
+  }
+
+  .reason .row .image img{
+    width: 41vw;
+    height: 28vh;
+  }
+
+  .container .box-container .box{
+    width: 45%;
+  }
+
+
+  .solution .box-container .box{
+    width: 48%;
+  }
+
+
+
+  .team{
+    min-height: 64vh;
+  }
+
+
+
+
+}
+
+/* moblie */
+
+@media (max-width:736px){
 
   html{
     font-size: 50%;
@@ -523,12 +591,13 @@ body{
     top:5.8rem;
   }
 
-  .home .banner{
-    font-size: 4rem;
+  .home h3{
+    font-size: 3.5rem;
   }
 
-  .home .slogan{
-    font-size: 1.7rem;
+  .home p{
+    font-size: 1.5rem;
+    margin-top: 6rem;
   }
 
   .about .row{
@@ -539,40 +608,100 @@ body{
   .about .row .image img{
     width: 100vw;
   }
+  .about .row .content,
+  .about .row .content h3{
+    margin: 3rem 0;
+  }
 
   .reason .row{
     flex-flow: column-reverse;
+  }
+
+  .reason .row .content h3{
+    margin: 3rem 0;
   }
 
   .reason .row:nth-child(even){
     flex-flow: column;
   }
 
-  .reason .row .image img{
-    width: 100vw;
-  }
-
   .reason .row .content{
     padding:0;
   }
 
+  .reason .row .image img{
+    width: 69vw;
+    height: 30vh;
+  }
+  
+  .container{
+    padding:0.8rem;
+  }
+  
+  .container .box-container .box{
+    width: 95%;
+  }
+  .container .box-container .box img{
+    max-width: 300px;
+  }
+  
+  
   .solution .box-container{
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
-  .container{
-    padding:20px;
+  .solution .box-container .box{
+    width: 95%;
+    margin-left: 0.5rem;
   }
-}
+  .container .box-container .box:hover,
+  .solution .box-container .box:hover{
+    transform: scale(1.01);
+  }
+  .team{
+    min-height: 83vh;
+  }
+  .team .mySwiper .card{
+    height:28rem;
+    width:22rem;
+    margin:5rem 1.8rem;
+  }
+  
+  .team .mySwiper .card .image{
+    margin:1rem 0;
+    padding-top: 4rem;
+  }
+  
+  .team .mySwiper .card .image img{
+    height:10rem;
+    width:10rem;
+  }
+  
+  .team .mySwiper .card .info h3{
+    font-size: 2rem;
+    color:#333;
+  }
+  
+  
+  .team .mySwiper .card .info .icons a{
+    margin-top: 3rem;
+    padding:0.5rem 0.5rem;
+    font-size: 2rem;
+    color:#333;
+  }
 
-@media (max-width:550px){
   .footer{
-    flex-flow: column;
-  }
-  .footer h1{
     text-align: center;
   }
-  .footer .icons{
-    padding:2rem 0;
+  
+  .footer .icons a{
+    display: none;
+  }
+  
+}
+@media (max-width:1024px){
+  .container .box-container .box img {
+    max-width: 258px;
   }
 }
